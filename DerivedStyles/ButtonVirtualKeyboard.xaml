@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ButtonVirtualKeyboard" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Padding" Value="50,25,50,25" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="#504f50"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+</ResourceDictionary>

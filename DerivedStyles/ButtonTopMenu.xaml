@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ButtonTopMenu" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" HorizontalAlignment="Center"
+                            Margin="0">
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                   FontFamily="{DynamicResource FontSwitch}" Margin="0,0,0,0"
+                                   x:Name="TextContent" FontSize="40" Foreground="Black">
+                            <Grid>
+                                <Ellipse Width="133" Height="133" Grid.Column="2" Margin="0,0,0,0" Stroke="Transparent" StrokeThickness="5" x:Name="EllipseButton"/>
+                                <ContentPresenter HorizontalAlignment="Center" Margin="4"/>
+                            </Grid>
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="#2bb7e6" TargetName="TextContent" />
+                            <Setter Property="Stroke" Value="#2bb7e6" TargetName="EllipseButton" />
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="EllipseButton"/>
+                            <Setter Property="Effect" TargetName="TextContent">
+                                <Setter.Value>
+                                    <DropShadowEffect ShadowDepth="0"
+                                                      Color="White"
+                                                      Opacity="0"
+                                                      RenderingBias="Quality"
+                                                      BlurRadius="5"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

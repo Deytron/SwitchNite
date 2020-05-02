@@ -1,0 +1,80 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="CheckBoxSettings" BasedOn="{StaticResource {x:Type CheckBox}}" TargetType="CheckBox">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="Height" Value="55"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="{DynamicResource ControlBackgroundDarkBrush}"
+                                    VerticalAlignment="Center" CornerRadius="50" HorizontalAlignment="Right"
+                                    BorderThickness="0" BorderBrush="{DynamicResource ControlBackgroundBrush}"
+                                    Grid.Column="2" Margin="0,0,5,0" Width="30" Height="30">
+                                <Viewbox x:Name="CheckIcon" Visibility="Collapsed">
+                                    <Grid>
+                                        <Ellipse VerticalAlignment="Center" Fill="{DynamicResource SelectionLightBrush}" Height="30" Width="30"/>
+                                        <TextBlock Text="b" FontFamily="Marlett" Foreground="Black" FontSize="30" Margin="0,0,0,-2.5"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Viewbox>
+                            </Border>
+                            <Rectangle Height="40" Margin="0,0,5,0" Width="2" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Transparent" x:Name="RectangleHover"/>
+                            <TextBlock Style="{DynamicResource TextBlockBaseStyle}" x:Name="TextContentCheckbox"
+                                        FontFamily="{DynamicResource FontSwitch}"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1">
+                                <ContentPresenter RecognizesAccessKey="True"/>
+                            </TextBlock>
+                        </Grid>
+                        <Border x:Name="BorderFocus" Margin="-3" CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="#137bc1"
+                                BorderThickness="3" Visibility="Hidden" />
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="CheckIcon" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="Black" />
+                            <Setter Property="Foreground" Value="{DynamicResource SelectionLightBrush}" TargetName="TextContentCheckbox" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Fill" Value="{DynamicResource SelectionLightBrush}" TargetName="RectangleHover"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black" />
+                            <Setter Property="Foreground" Value="{DynamicResource SelectionLightBrush}" TargetName="TextContentCheckbox" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Fill" Value="{DynamicResource SelectionLightBrush}" TargetName="RectangleHover"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="CheckBox.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <ColorAnimation From="#137bc1"
+                                        To="#FF93FAF7" 
+                                    Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)" 
+                                                    Storyboard.TargetName="BorderFocus"
+                                    Duration="0:0:0.55"
+                                                    AutoReverse="True"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
