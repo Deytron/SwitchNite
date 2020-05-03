@@ -12,7 +12,9 @@ A Playnite theme that mimics the Switch's interface. It's a fullscreen theme.
 ## Usage
 
 Below are my recommended settings. While there's a lot of settings that are up to your choice, if you want your client to look like in the screenshots, you're gonna have to use **Game Logos**.
+
 ![img](https://i.imgur.com/qkwLgYk.png)
+
 ![img](https://i.imgur.com/WvwSxyR.png)
 
 ## Editing controller and user image
