@@ -18,4 +18,4 @@ Below are my recommended settings. While there's a lot of settings that are up t
 ![img](https://i.imgur.com/WvwSxyR.png)
 
 ## Editing controller and user image
-To change the controller displayed at theb bottom left, or the user image on the top left, head to SwitchNite's install folder (by dafault ``C:\Users\{username}\AppData\Roaming\Playnite\Themes\Fullscreen\SwitchNite_somenumbers`` and follow the instructions in the `.png` file.
+To change the controller displayed at theb bottom left, or the user image on the top left, head to SwitchNite's install folder (by default ``C:\Users\{username}\AppData\Roaming\Playnite\Themes\Fullscreen\SwitchNite_somenumbers`` and follow the instructions in the `.png` file.
