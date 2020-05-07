@@ -44,12 +44,12 @@
                                 <Canvas Height="30" />
 
 
-                                <ButtonEx Style="{DynamicResource ButtonMainMenu}" HorizontalAlignment="Center">
+                                <ButtonEx x:Name="PART_ButtonShutdownSystem" Style="{DynamicResource ButtonMainMenu}" HorizontalAlignment="Center">
                                     <Button.Content>
                                         <StackPanel HorizontalAlignment="Center" MaxWidth="435" Orientation="Horizontal">
                                             <Image Source="{ThemeFile 'Images/desktop.png'}" Height="25" Margin="-50,0,0,0" HorizontalAlignment="Center"
                                    RenderOptions.BitmapScalingMode="Fant"/>
-                                            <TextBlock x:Name="PART_ButtonShutdownSystem" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                                    Text="{DynamicResource LOCMenuShutdownSystem}" FontSize="22" FontFamily="{DynamicResource FontSwitch}"/>
                                         </StackPanel>
                                     </Button.Content>
